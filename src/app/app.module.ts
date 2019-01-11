@@ -6,6 +6,8 @@ import { AuthService } from './auth.service';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthComponent } from './auth/auth.component';
+import { HttpClientJsonpModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,10 @@ import { AuthComponent } from './auth/auth.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientJsonpModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
