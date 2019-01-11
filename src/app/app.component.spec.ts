@@ -1,31 +1,34 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
+
+  let fixture , app , compiled;
+  let component : AppComponent
+
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
+      imports:[
+        FormsModule
+      ]
     }).compileComponents();
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.debugElement.componentInstance;
+    component = fixture.componentInstance;
+    compiled = fixture.debugElement.nativeElement;
+    
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+  it('Debe crear mi app', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'PruebasUnitarias'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('PruebasUnitarias');
-  });
+  
 
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to PruebasUnitarias!');
-  });
+
 });
